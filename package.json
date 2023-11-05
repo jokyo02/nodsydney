@@ -8,6 +8,6 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "uws-reverse-proxy": "^1.0.0"
+    "uws-reverse-proxy": "*"
   }
 }
