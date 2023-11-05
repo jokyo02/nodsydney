@@ -4,6 +4,7 @@
   "description": "A reverse proxy server for Render deployment",
   "main": "index.js",
   "scripts": {
+    "install": "bun install uNetworking/uWebSockets.js#v20.33.0"
     "start": "node index.js"
   },
   "dependencies": {
