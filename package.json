@@ -1,14 +1,15 @@
 {
-  "name": "reverse-proxy",
+  "name": "express-bing-proxy",
   "version": "1.0.0",
-  "description": "A reverse proxy server for Render deployment",
-  "main": "index.js",
+  "description": "A simple Express app that proxies requests to Bing",
+  "main": "src/index.js",
   "scripts": {
-    "install": "bun install uNetworking/uWebSockets.js#v20.33.0"
-    "start": "node index.js"
+    "start": "node src/index.js"
   },
   "dependencies": {
     "express": "^4.17.1",
-    "uws-reverse-proxy": "^3.2.1"
+    "cors": "^2.8.5",
+    "body-parser": "^1.19.0",
+    "node-fetch": "^2.6.1"
   }
 }
