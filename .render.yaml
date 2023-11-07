@@ -1,9 +1,6 @@
 services:
-- type: web
-  name: reverse-proxy
-  env: node
-  buildCommand: npm install
-  startCommand: npm start
-  envVars:
-  - key: NODE_ENV
-    value: production
+  - type: web
+    env: node
+    port: 3000
+    buildCommand: npm install
+    startCommand: npm start
