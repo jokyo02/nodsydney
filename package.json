@@ -1,6 +1,5 @@
 {
   "name": "express-bing-proxy",
-  #"type": "module",
   "version": "1.0.0",
   "description": "A simple Express app that proxies requests to Bing",
   "main": "src/index.js",
