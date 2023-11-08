@@ -1,5 +1,8 @@
 // 导入express模块
 const express = require('express');
+// 导入request模块
+const request = require('request');
+
 
 // 导入node-fetch模块
 const fetch = require('node-fetch');
