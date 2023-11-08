@@ -11,8 +11,12 @@ async function handleRequest(request) {
   let serverUrl = 'https://sydney.bing.com';
 
   // 如果需要，可以将serverUrl替换为您的服务器地址
-  let fetchUrl = new URL(request.url);
-  fetchUrl.hostname = serverUrl;
+  //let fetchUrl = new URL(request.url);
+  //fetchUrl.hostname = serverUrl;
+
+
+   const currentUrl = new URL(request.url);
+   const fetchUrl = new URL(serverUrl + currentUrl.pathname + currentUrl.search);
 
   let serverRequest = new Request(fetchUrl, request);
   //  serverRequest.headers.set('Host', 'sydney.bing.com');
