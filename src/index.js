@@ -36,13 +36,13 @@ app.use((req, res) => {
   }
   headers['origin'] = SYDNEY_ORIGIN;
   headers['referer'] = 'https://www.bing.com/search?q=Bing+AI';
-  const randIP = '163.47.101.101';
-  headers['X-Forwarded-For'] = randIP;
+ // const randIP = '163.47.101.101';
+ // headers['X-Forwarded-For'] = randIP;
 
   const cookie = req.headers['cookie'] || '';
   let cookies = cookie;
   if (!cookie.includes('_U=')) {
-    cookies += '; _U=' + '';
+    cookies += '; _U=' + 'xxxxxx';
   }
   headers['cookie'] = cookies;
 
