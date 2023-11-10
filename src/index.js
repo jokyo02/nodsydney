@@ -34,7 +34,8 @@ app.use((req, res) => {
       headers[key] = req.headers[key];
     }
   }
-  headers['origin'] = SYDNEY_ORIGIN;
+//  headers['origin'] = SYDNEY_ORIGIN;
+  headers['origin'] = 'https://www.bing.com';
   headers['referer'] = 'https://www.bing.com/search?q=Bing+AI';
  // const randIP = '163.47.101.101';
  // headers['X-Forwarded-For'] = randIP;
@@ -42,7 +43,7 @@ app.use((req, res) => {
   const cookie = req.headers['cookie'] || '';
   let cookies = cookie;
   if (!cookie.includes('_U=')) {
-    cookies += '; _U=' + 'xxxxxx';
+    cookies += '; _U=' + '';
   }
   headers['cookie'] = cookies;
 
