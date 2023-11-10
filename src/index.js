@@ -34,7 +34,7 @@ app.use((req, res) => {
       headers[key] = req.headers[key];
     }
   }
-  headers['origin'] = SYDNEY_ORIGIN;
+//  headers['origin'] = SYDNEY_ORIGIN;
   headers['referer'] = 'https://www.bing.com/search?q=Bing+AI';
  // const randIP = '163.47.101.101';
  // headers['X-Forwarded-For'] = randIP;
@@ -44,7 +44,7 @@ app.use((req, res) => {
   if (!cookie.includes('_U=')) {
     cookies += '; _U=' + 'xxxxxx';
   }
-  headers['cookie'] = cookies;
+//  headers['cookie'] = cookies;
 
   // Send the request to the target url with the modified headers
   request(
