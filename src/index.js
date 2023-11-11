@@ -9,10 +9,15 @@ app.use('/', (req, res) => {
     'Origin': 'https://www.bing.com',
     'Cookie': req.headers.cookie + '; _U=xxx',
   };
-  
+
   proxy.web(req, res, {
     target: 'wss://sydney.bing.com',
     secure: false,
     changeOrigin: true,
     headers,
   });
+});
+
+app.listen(3000, () => {
+  console.log('Proxy server is running on port 3000');
+});
