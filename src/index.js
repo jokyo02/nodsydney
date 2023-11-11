@@ -1,5 +1,7 @@
 // 导入express模块
 const express = require('express');
+// 导入Request模块
+const request = require('request');
 // 导入ws模块
 const WebSocket = require('ws');
 
@@ -51,7 +53,7 @@ async function handleWebSocket(req, res) {
 //  const currentUrl = new URL(req.url);
 //  const fetchUrl = new URL(serverUrl + currentUrl.pathname + currentUrl.search);
 
-  let serverRequest = new Request(fetchUrl, req);
+  let serverRequest = new request.Request(fetchUrl, req);
   // serverRequest.headers.set('Host', 'sydney.bing.com');
   serverRequest.headers.set('origin', 'https://www.bing.com');
   serverRequest.headers.set('referer', 'https://www.bing.com/search?q=Bing+AI');
