@@ -45,7 +45,7 @@ app.use((req, res, next) => {
 async function handleWebSocket(req, res) {
   // 如果需要，可以将serverUrl替换为您的服务器地址
   let serverUrl = "https://sydney.bing.com";
-   let fetchUrl = new URL(req.url);
+   let fetchUrl = new URL(req.url,serverUrl);
    fetchUrl.hostname = serverUrl;
 
 //  const currentUrl = new URL(req.url);
