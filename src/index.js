@@ -77,7 +77,8 @@ let serverRequest = new request.Request({
   serverRequest.headers['origin'] =  'https://www.bing.com';
   serverRequest.headers['referer'] = 'https://www.bing.com/search?q=Bing+AI';
 
-  const cookie = serverRequest.headers.get('Cookie') || '';
+ // const cookie = serverRequest.headers.get('Cookie') || '';
+  const cookie = serverRequest.headers['Cookie'] || '';
   let cookies = cookie;
   if (!cookie.includes('_U=')) {
     cookies += '; _U=' + '';
