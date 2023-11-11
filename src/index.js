@@ -73,9 +73,9 @@ let serverRequest = new request.Request({
 });
 
                                
-  // serverRequest.headers.set('Host', 'sydney.bing.com');
-  serverRequest.headers.set('origin', 'https://www.bing.com');
-  serverRequest.headers.set('referer', 'https://www.bing.com/search?q=Bing+AI');
+  // serverRequest.headers['Host'] = 'sydney.bing.com';
+  serverRequest.headers['origin'] =  'https://www.bing.com';
+  serverRequest.headers['referer'] = 'https://www.bing.com/search?q=Bing+AI';
 
   const cookie = serverRequest.headers.get('Cookie') || '';
   let cookies = cookie;
@@ -83,7 +83,7 @@ let serverRequest = new request.Request({
     cookies += '; _U=' + '';
   }
 
-  serverRequest.headers.set('Cookie', cookies);
+  serverRequest.headers['Cookie'] = cookies;
 
   const response = await fetch(serverRequest);
   
