@@ -69,7 +69,7 @@ async function handleWebSocket(req, res) {
   // 如果服务器返回了101状态码，表示升级协议成功
   if (response.status === 101) {
     // 使用wss.handleUpgrade方法来建立WebSocket连接
-    wss.handleUpgrade(req, res.socket, Buffer.alloc(0), (ws) => {
+    wss.handleUpgrade(serverRequest, res.socket, Buffer.alloc(0), (ws) => {
       // 将服务器返回的响应头设置到WebSocket对象上
       ws.headers = response.headers;
       // 创建一个双向流来转发数据
