@@ -15,6 +15,10 @@ app.use('/', (req, res) => {
     secure: false,
     changeOrigin: true,
     headers,
+    timeout: 5000, // 5 seconds
+  }, (error) => {
+    console.error('Proxy error:', error);
+    res.status(500).send('Proxy error');
   });
 });
 
