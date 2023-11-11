@@ -1,10 +1,30 @@
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 // 引入express模块
 const express = require('express');
 // 引入axios模块
 const axios = require('axios');
 // 引入ws模块
 const WebSocket = require('ws');
+
+// 定义保留的请求头部
+const KEEP_REQ_HEADERS = [
+  'accept',
+  'accept-encoding',
+  'accept-language',
+  'connection',
+  'cookie',
+  'upgrade',
+  'user-agent',
+  'sec-websocket-extensions',
+  'sec-websocket-key',
+  'sec-websocket-version',
+  'x-request-id',
+  'content-length',
+  'content-type',
+  'access-control-request-headers',
+  'access-control-request-method',
+];
 
 // 创建一个express应用
 const app = express();
@@ -41,11 +61,16 @@ app.use((req, res, next) => {
 
 // 处理WebSocket请求的函数
 async function handleWebSocket(req, res) {
-  let serverUrl = "https://sydney.bing.com";
-  let fetchUrl = new URL(req.url, serverUrl);
+  const serverUrl = "https://sydney.bing.com";
+  const fetchUrl = new URL(req.url, serverUrl);
   fetchUrl.hostname = serverUrl;
 
-  let headers = req.headers;
+  const headers = {};
+  for (const key of Object.keys(req.headers)) {
+    if (KEEP_REQ_HEADERS.includes(key)) {
+      headers[key] = req.headers[key];
+    }
+  }
 
   // 处理cookie
   let cookies = headers.cookie || '';
