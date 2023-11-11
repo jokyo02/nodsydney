@@ -5,7 +5,8 @@ const request = require('request');
 // 导入ws模块
 const WebSocket = require('ws');
 
-import fetch from "node-fetch";
+//import fetch from "node-fetch";
+const fetch = require("node-fetch");
 
 // 创建一个express应用
 const app = express();
