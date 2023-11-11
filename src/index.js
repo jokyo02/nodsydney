@@ -1,3 +1,4 @@
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 // 引入express模块
 const express = require('express');
 // 引入axios模块
