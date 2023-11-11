@@ -52,8 +52,27 @@ async function handleWebSocket(req, res) {
 
 //  const currentUrl = new URL(req.url);
 //  const fetchUrl = new URL(serverUrl + currentUrl.pathname + currentUrl.search);
+//  let serverRequest = new request.Request(fetchUrl, req);
 
-  let serverRequest = new request.Request(fetchUrl, req);
+// 获取一个已有的请求对象（req）的请求头
+let headers = req.headers;
+// 创建一个新的Request对象，复制请求头
+let serverRequest = new request.Request({
+  // 指定一个完全合格的URI
+  uri: fetchUrl,
+  // 指定请求头
+  headers: headers
+}, function(error, response, body) {
+  // 在回调函数中处理响应或错误
+  if (error) {
+    console.error('error:', error);
+  } else {
+    console.log('statusCode:', response.statusCode);
+    console.log('body:', body);
+  }
+});
+
+                               
   // serverRequest.headers.set('Host', 'sydney.bing.com');
   serverRequest.headers.set('origin', 'https://www.bing.com');
   serverRequest.headers.set('referer', 'https://www.bing.com/search?q=Bing+AI');
