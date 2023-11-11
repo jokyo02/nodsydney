@@ -45,11 +45,11 @@ app.use((req, res, next) => {
 async function handleWebSocket(req, res) {
   // 如果需要，可以将serverUrl替换为您的服务器地址
   let serverUrl = "https://sydney.bing.com";
-  // let fetchUrl = new URL(request.url);
-  // fetchUrl.hostname = serverUrl;
+   let fetchUrl = new URL(req.url);
+   fetchUrl.hostname = serverUrl;
 
-  const currentUrl = new URL(req.url);
-  const fetchUrl = new URL(serverUrl + currentUrl.pathname + currentUrl.search);
+//  const currentUrl = new URL(req.url);
+//  const fetchUrl = new URL(serverUrl + currentUrl.pathname + currentUrl.search);
 
   let serverRequest = new Request(fetchUrl, req);
   // serverRequest.headers.set('Host', 'sydney.bing.com');
