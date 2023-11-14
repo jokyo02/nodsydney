@@ -1,6 +1,6 @@
 services:
   - type: web
     env: node
-    port: 3000
+    port: 7860
     buildCommand: npm install
     startCommand: npm start
