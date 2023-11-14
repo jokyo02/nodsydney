@@ -112,6 +112,6 @@ async function handleWebSocket(req, res) {
 }
 
 // 监听3000端口
-app.listen(3000, () => {
-  console.log('Express app listening on port 3000');
+app.listen(7860, () => {
+  console.log('Express app listening on port 7860');
 });
