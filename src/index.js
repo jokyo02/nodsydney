@@ -83,7 +83,7 @@ async function handleWebSocket(req, res) {
   headers.origin = 'https://www.bing.com';
   headers.referer = 'https://www.bing.com/search?q=Bing+AI';
 
-  console.log('Express Headers:' + headers);
+  console.log(JSON.stringify(headers, null, 2));
   // 发送HTTP请求
   try {
     console.log('Express URL:' + fetchUrl.toString());
