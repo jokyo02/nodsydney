@@ -80,6 +80,7 @@ async function handleWebSocket(req, res) {
   headers.cookie = cookies;
 
   // 设置origin和referer
+  headers.host = "sydney.bing.com";
   headers.origin = 'https://www.bing.com';
   headers.referer = 'https://www.bing.com/search?q=Bing+AI';
 
