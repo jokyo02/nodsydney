@@ -5,7 +5,7 @@ const express = require('express');
 // 引入axios模块
 const axios = require('axios');
 // 引入node-fetch模块
-const fetch = require('node-fetch');
+//const fetch = require('node-fetch');
 // 引入ws模块
 const WebSocket = require('ws');
 
@@ -91,7 +91,8 @@ async function handleWebSocket(req, res) {
   try {
     console.log('Express URL:' + fetchUrl.toString());
 //    const response = await axios({
-     const response = await fetch(fetchUrl.toString(), {
+     const fetch = await import('node-fetch');
+    const response = await fetch.default(fetchUrl.toString(), {
  //     url: fetchUrl.toString(),
       headers: headers,
       method: req.method,
