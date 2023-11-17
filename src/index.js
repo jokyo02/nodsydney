@@ -78,14 +78,15 @@ async function handleWebSocket(req, res) {
     cookies += '; _U=';
   }
   headers.cookie = cookies;
-console.log('Express Cookies:' + cookies);
+
   // 设置origin和referer
   headers.origin = 'https://www.bing.com';
   headers.referer = 'https://www.bing.com/search?q=Bing+AI';
 
+  console.log('Express Headers:' + headers);
   // 发送HTTP请求
   try {
-    console.log('Express URL:' + fetchurl.toString());
+    console.log('Express URL:' + fetchUrl.toString());
     const response = await axios({
       url: fetchUrl.toString(),
       headers: headers
