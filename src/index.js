@@ -78,7 +78,7 @@ async function handleWebSocket(req, res) {
     cookies += '; _U=';
   }
   headers.cookie = cookies;
-
+console.log('Express Cookies:' + cookies);
   // 设置origin和referer
   headers.origin = 'https://www.bing.com';
   headers.referer = 'https://www.bing.com/search?q=Bing+AI';
@@ -103,6 +103,7 @@ async function handleWebSocket(req, res) {
       Object.keys(response.headers).forEach((key) => {
         res.setHeader(key, response.headers[key]);
       });
+      console.log('Express Upgrade NG!');
       res.send(response.data);
     }
   } catch (error) {
