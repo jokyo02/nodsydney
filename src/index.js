@@ -116,19 +116,18 @@ res.writeHead(200, {
 //        response.data.pipe(duplex);
 //        duplex.pipe(response.data);
          console.log('Express Upgrade OK!');
-      });
+//      });
     } else {
       // 设置响应头
       console.log('Express Upgrade NG!');
 //      Object.keys(response.headers).forEach((key) => {
 //        res.setHeader(key, response.headers[key]);
-      });
+//      });
 
-//      res.send(response.data);
-
-  res.end(text);
-  
+//      res.send(response.data); 
     }
+  res.end(text);
+    
   } catch (error) {
     console.error('Error:', error);
     res.sendStatus(500);
