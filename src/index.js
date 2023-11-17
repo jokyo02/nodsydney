@@ -109,7 +109,7 @@ async function handleWebSocket(req, res) {
 
     console.log(JSON.stringify(headers, null, 2));
   const reqBody =  JSON.stringify(req.body);
-    console.log(rqBody);
+    console.log(reqBody);
   // 发送HTTP请求
   try {
     console.log('Express URL:' + fetchUrl.toString());
