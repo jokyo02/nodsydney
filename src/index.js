@@ -95,24 +95,43 @@ async function handleWebSocket(req, res) {
       data: req.body, // 使用req.body作为data选项
       redirect: 'manual'
 });
+    const response = await axios({
+  url: fetchUrl.toString(),
+  headers: headers
+});
+
+const text = response.data;
+const status = response.status;
+const url = response.config.url;
+
+res.writeHead(200, {
+  'Content-Type': 'application/text; charset=UTF-8',
+  'x-url': url,
+  'x-status': status,
+});
+
+
 
     // 如果响应状态码为101，表示协议切换成功
     if (response.status === 101) {
-      wss.handleUpgrade(req, res.socket, Buffer.alloc(0), (ws) => {
-        ws.headers = response.headers;
-        const duplex = WebSocket.createWebSocketStream(ws);
-        response.data.pipe(duplex);
-        duplex.pipe(response.data);
+//      wss.handleUpgrade(req, res.socket, Buffer.alloc(0), (ws) => {
+//        ws.headers = response.headers;
+//        const duplex = WebSocket.createWebSocketStream(ws);
+//        response.data.pipe(duplex);
+//        duplex.pipe(response.data);
          console.log('Express Upgrade OK!');
       });
     } else {
       // 设置响应头
       console.log('Express Upgrade NG!');
-      Object.keys(response.headers).forEach((key) => {
-        res.setHeader(key, response.headers[key]);
+//      Object.keys(response.headers).forEach((key) => {
+//        res.setHeader(key, response.headers[key]);
       });
 
-      res.send(response.data);
+//      res.send(response.data);
+
+  res.end(text);
+  
     }
   } catch (error) {
     console.error('Error:', error);
