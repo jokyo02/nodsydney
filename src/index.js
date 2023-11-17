@@ -119,7 +119,7 @@ async function handleWebSocket(req, res) {
  //     url: fetchUrl.toString(),
       headers: headers,
       method: req.method,
-      data: req.body, 
+      data:  JSON.stringify(req.body),
       redirect: 'manual'
 });
 
