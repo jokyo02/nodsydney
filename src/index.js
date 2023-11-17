@@ -100,10 +100,11 @@ console.log('Express Cookies:' + cookies);
       });
     } else {
       // 设置响应头
+      console.log('Express Upgrade NG!');
       Object.keys(response.headers).forEach((key) => {
         res.setHeader(key, response.headers[key]);
       });
-      console.log('Express Upgrade NG!');
+
       res.send(response.data);
     }
   } catch (error) {
