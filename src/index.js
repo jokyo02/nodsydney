@@ -92,7 +92,7 @@ async function handleWebSocket(req, res) {
       url: fetchUrl.toString(),
       headers: headers,
       method: req.method,
-      data: req.body, // 使用req.body作为data选项
+      data: req.body, 
       redirect: 'manual'
 });
 
