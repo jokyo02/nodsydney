@@ -97,6 +97,7 @@ console.log('Express Cookies:' + cookies);
         const duplex = WebSocket.createWebSocketStream(ws);
         response.data.pipe(duplex);
         duplex.pipe(response.data);
+         console.log('Express Upgrade OK!');
       });
     } else {
       // 设置响应头
