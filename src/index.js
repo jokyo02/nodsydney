@@ -91,7 +91,7 @@ async function handleWebSocket(req, res) {
     const response = await axios({
       url: fetchUrl.toString(),
       headers: headers,
-      method: method,
+      method: req.method,
       data: req.body, // 使用req.body作为data选项
       redirect: 'manual'
 });
