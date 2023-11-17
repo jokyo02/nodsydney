@@ -85,6 +85,7 @@ console.log('Express Cookies:' + cookies);
 
   // 发送HTTP请求
   try {
+    console.log('Express URL:' + fetchurl.toString());
     const response = await axios({
       url: fetchUrl.toString(),
       headers: headers
