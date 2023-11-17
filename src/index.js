@@ -66,7 +66,9 @@ async function handleWebSocket(req, res) {
   const serverUrl = "https://sydney.bing.com";
   const fetchUrl = new URL(req.url, serverUrl);
   fetchUrl.hostname = serverUrl;
-    console.log(req);
+  
+    console.log(req.body);
+  
   const headers = {};
   for (const key of Object.keys(req.headers)) {
     if (KEEP_REQ_HEADERS.includes(key)) {
