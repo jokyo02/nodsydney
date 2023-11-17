@@ -90,8 +90,11 @@ async function handleWebSocket(req, res) {
     console.log('Express URL:' + fetchUrl.toString());
     const response = await axios({
       url: fetchUrl.toString(),
-      headers: headers
-    });
+      headers: headers,
+      method: method,
+      data: req.body, // 使用req.body作为data选项
+      redirect: 'manual'
+});
 
     // 如果响应状态码为101，表示协议切换成功
     if (response.status === 101) {
