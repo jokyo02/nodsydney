@@ -87,8 +87,9 @@ async function handleWebSocket(req, res) {
   const serverUrl = "https://sydney.bing.com";
   const fetchUrl = new URL(req.url, serverUrl);
   fetchUrl.hostname = serverUrl;
-  
-    console.log(req.body);
+
+  const reqBody =  JSON.stringify(req.body);
+    console.log(rqBody);
   
   const headers = {};
   for (const key of Object.keys(req.headers)) {
@@ -119,7 +120,7 @@ async function handleWebSocket(req, res) {
  //     url: fetchUrl.toString(),
       headers: headers,
       method: req.method,
-      data:  JSON.stringify(req.body),
+      data:  reqBody,
       redirect: 'manual'
 });
 
