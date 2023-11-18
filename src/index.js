@@ -2,6 +2,7 @@
 //这样，当你访问 http://localhost:7860/ 时，就会看到'Site is working'的提示。希望这能帮到你。😊
 
 const httpProxy = require('http-proxy');
+const httpProxy = require('https-proxy');
 const proxy = httpProxy.createProxyServer({});
 
 //const https = require('https');
@@ -42,5 +43,7 @@ server.on('upgrade', function(req, socket, head) {
   });
 });
 
-server.listen(7860);
+server.listen(7860, function() {
+  console.log('Listen on Port 7860......');
+});
 
