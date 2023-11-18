@@ -1,4 +1,5 @@
 //好的，我可以帮你添加一个根/路径响应。你可以在创建服务器的函数中添加一个判断条件，如果请求的路径是'/'，就返回一个简单的消息，比如'Site is working'。你可以参考下面的代码：
+//这样，当你访问 http://localhost:7860/ 时，就会看到'Site is working'的提示。希望这能帮到你。😊
 
 const httpProxy = require('http-proxy');
 const proxy = httpProxy.createProxyServer({});
@@ -34,4 +35,3 @@ server.on('upgrade', function(req, socket, head) {
 
 server.listen(7860);
 
-这样，当你访问 http://localhost:7860/ 时，就会看到'Site is working'的提示。希望这能帮到你。😊
