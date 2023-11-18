@@ -10,7 +10,8 @@ proxy.on('proxyReq', function(proxyReq, req, res, options) {
 
 const serverUrl = 'sydney.bing.com';
 
-const server = require('http').createServer(function(req, res) {
+//const server = require('http').createServer(function(req, res) {
+const server = https.createServer(options, function(req, res) {
   // 添加一个判断条件
   if (req.url === '/') {
     // 返回一个简单的消息
