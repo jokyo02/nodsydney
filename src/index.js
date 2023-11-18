@@ -14,7 +14,7 @@ const server = require('http').createServer(function(req, res) {
   if (req.url === '/') {
     // 返回一个简单的消息
     res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('WleCome! Site is working ......');
+    res.end('WellCome! Site is working ......');
   } else {
     // 原来的代码
     proxy.web(req, res, {
