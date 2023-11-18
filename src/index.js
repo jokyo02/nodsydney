@@ -2,7 +2,7 @@
 //这样，当你访问 http://localhost:7860/ 时，就会看到'Site is working'的提示。希望这能帮到你。😊
 
 const httpProxy = require('http-proxy');
-const httpProxy = require('https-proxy');
+const httpProxy = require('https-proxy-agent');
 const proxy = httpProxy.createProxyServer({});
 
 //const https = require('https');
