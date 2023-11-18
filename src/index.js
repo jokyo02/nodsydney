@@ -2,8 +2,15 @@
 //这样，当你访问 http://localhost:7860/ 时，就会看到'Site is working'的提示。希望这能帮到你。😊
 
 const httpProxy = require('http-proxy');
-//const https = require('https');
 const proxy = httpProxy.createProxyServer({});
+
+//const https = require('https');
+//const fs = require('fs');
+
+//const options = {
+//  key: fs.readFileSync('/path/to/private.key'),
+ // cert: fs.readFileSync('/path/to/certificate.crt')
+//};
 
 proxy.on('proxyReq', function(proxyReq, req, res, options) {
   proxyReq.setHeader('Origin', 'https://www.bing.com');
@@ -11,7 +18,7 @@ proxy.on('proxyReq', function(proxyReq, req, res, options) {
 
 const serverUrl = 'sydney.bing.com';
 
-const server = require('http').createServer(function(req, res) {
+const server = require('https').createServer(function(req, res) {
 //const server = https.createServer(options, function(req, res) {
   // 添加一个判断条件
   if (req.url === '/') {
