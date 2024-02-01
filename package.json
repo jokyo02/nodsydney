@@ -2,9 +2,9 @@
   "name": "express-request",
   "version": "1.0.0",
   "description": "A simple express app that sends requests to Sydney origin",
-  "main": "src/index.js",
+  "main": "oldindex.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node oldindex.js"
   },
   "dependencies": {
     "express": "^4.17.1",
