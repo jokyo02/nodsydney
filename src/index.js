@@ -1,7 +1,7 @@
 const express = require('express');
 const request = require('request');
 
-const SYDNEY_ORIGIN = 'https://www.bing.com';
+const SYDNEY_ORIGIN = 'https://testwebing.nbing.eu.org';
 const KEEP_REQ_HEADERS = [
   'accept',
   'accept-encoding',
