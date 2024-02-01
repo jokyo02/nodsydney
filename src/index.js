@@ -1,6 +1,9 @@
 const express = require('express');
 const request = require('request');
 
+process.stdout.setEncoding('utf8');
+
+
 const SYDNEY_ORIGIN = 'https://www.bing.com';
 const KEEP_REQ_HEADERS = [
   'accept',
