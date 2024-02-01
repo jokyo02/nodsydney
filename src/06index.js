@@ -62,7 +62,7 @@ proxy.on('proxyReq', function(proxyReq, req, res, options) {
   proxyReq.setHeader('X-Forwarded-For', randIP);
 });
 
-const serverUrl = 'testwebing.nbing.eu.org';
+const serverUrl = 'www.bing.com';
 
 const server = require('http').createServer(function(req, res) {
 //const server = https.createServer(options, function(req, res) {
