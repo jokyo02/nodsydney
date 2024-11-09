@@ -57,12 +57,12 @@ const randomString = (e) => {
 //};
 
 proxy.on('proxyReq', function(proxyReq, req, res, options) {
-  proxyReq.setHeader('Origin', 'https://www.bing.com');
+  proxyReq.setHeader('Origin', 'https://copilot.microsoft.com');
   const randIP = getRandomIP();
   proxyReq.setHeader('X-Forwarded-For', randIP);
 });
 
-const serverUrl = 'sydney.bing.com';
+const serverUrl = 'copilot.microsoft.com';
 
 const server = require('http').createServer(function(req, res) {
 //const server = https.createServer(options, function(req, res) {
