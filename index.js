@@ -15,7 +15,7 @@ async function handleRequest(request) {
   fetchUrl.hostname = serverUrl;
 
   let serverRequest = new Request(fetchUrl, request);
-    serverRequest.headers.set('Host', 'copilot.microsoft.com');
+  // serverRequest.headers.set('Host', 'copilot.microsoft.com');
   serverRequest.headers.set('Origin', 'https://copilot.microsoft.com');
   //  console.log("This is sydney!")
 
