@@ -8,15 +8,15 @@ import fetch from 'node-fetch';
 // 定义一个handleRequest函数，用来处理不同的请求，并返回相应的响应
 async function handleRequest(request) {
   //  const url = new URL(request.url);
-  let serverUrl = 'https://sydney.bing.com';
+  let serverUrl = 'https://copilot.microsoft.com';
 
   // 如果需要，可以将serverUrl替换为您的服务器地址
   let fetchUrl = new URL(request.url);
   fetchUrl.hostname = serverUrl;
 
   let serverRequest = new Request(fetchUrl, request);
-  //  serverRequest.headers.set('Host', 'sydney.bing.com');
-  serverRequest.headers.set('Origin', 'https://www.bing.com');
+    serverRequest.headers.set('Host', 'copilot.microsoft.com');
+  serverRequest.headers.set('Origin', 'https://copilot.microsoft.com');
   //  console.log("This is sydney!")
 
   const cookie = request.headers.get('Cookie') || '';
